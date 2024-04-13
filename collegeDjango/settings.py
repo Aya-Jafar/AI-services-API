@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f9p9m^vnr%#)cq&w#am_115ji49%#s@vaa70j0htb9qf$q*r_t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','127.0.0.1','http://localhost:3003']
 
 
 # Application definition
@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_app',
-    'first_exam'
+     'corsheaders',
 ]
+
+CSP_DEFAULT_SRC = ("'self'", "http://127.0.0.1:8000")
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,7 +52,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+       'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3003",
+]
+
 
 ROOT_URLCONF = 'collegeDjango.urls'
 

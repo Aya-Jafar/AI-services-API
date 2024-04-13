@@ -1,8 +1,9 @@
 from django.urls import path
-from . import views
+from .views import predict_next_word , send_question 
 
 
 urlpatterns = [
-    path('',  views.MyView, name='my-view'),
-    
+    path('next-word/',  predict_next_word),
+    # path("summarize/", summarize),
+    path('QA/', send_question)
 ]
