@@ -6,7 +6,22 @@ import torch
 
 
 """
-    Next word prediction model endpoint
+Next word prediction model endpoint
+
+This endpoint takes a prompt as input and 
+generates the next word prediction based on the 
+provided prompt using a pretrained language model.
+
+Example usage:
+POST /generate/next-word/
+{
+    "prompt": "Once upon a time"
+}
+
+Returns:
+{
+    "generated_text": "there"
+}
 """
 
 # Load tokenizer and model
@@ -61,7 +76,21 @@ def predict_next_word(request):
 
 
 """
-    Question and Answer model
+Question and Answer model endpoint
+
+This endpoint takes a prompt as input and generates the question and answer based on the provided prompt using a pretrained question answering model.
+
+Example usage:
+POST /generate/QA/
+{
+    "prompt": "Who is the president of the United States?"
+}
+
+Returns:
+{
+    "generated_text": "The president of the United States is Joe Biden."
+}
+
 """
 
 QA_tokenizer = AutoTokenizer.from_pretrained("mohammedRiad/QAModel")
