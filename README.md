@@ -69,13 +69,13 @@ Takes a long text to summarize
 - **Example Usage:**
   ```json
   {
-      "long_text": "Example Long text"
+      "long_text": "Doctor: Good morning! How can I help you today?\nPatient: Hi, doctor. I've been experiencing some chest pain and shortness of breath lately.\nDoctor: I see. When did these symptoms start?\nPatient: It's been about a week now. The chest pain comes and goes, and I feel like I can't take a deep breath sometimes.\nDoctor: Have you noticed any other symptoms, such as coughing or fever?\nPatient: No coughing, but I've been feeling a bit tired and lightheaded.\nDoctor: Alright. Let's do a quick examination. I'll listen to your heart and lungs and take your blood pressure.\nPatient: Sure, doctor.\n[Doctor performs examination]\nDoctor: Your blood pressure is slightly elevated, and I hear some wheezing in your lungs. I'd like to run some tests to rule out any serious conditions. We'll start with an ECG and a chest X-ray.\nPatient: Okay, doctor. Should I be worried?\nDoctor: It's important to investigate further to determine the cause of your symptoms. Let's take one step at a time. I'll also prescribe you some medication to help with the chest pain and shortness of breath in the meantime.\nPatient: Thank you, doctor. I appreciate your help.\nDoctor: You're welcome. Let's get those tests done, and we'll go from there. I'll see you again soon for a follow-up.\n"
   }
 
 - **Response**
   ```json
   {
-       "summarized_text": "Appendicitis"
+       "summarized_text": "Doctor: Good morning! How can I help you today? Patient: Hi, doctor. I've been experiencing some chest pain and shortness of breath lately. Doctor: I see. When did these symptoms start? Patient: It's been about a week now. The chest pain comes and goes, and I feel like I can't take a deep breath sometimes. Doctor: Have you noticed any other symptoms, such as coughing or fever? Patient: No coughing, but I've been feeling a bit tired and lightheaded. Doctor: Alright. Let's do a quick examination. I'll listen to your heart and lungs and take your blood pressure. Patient: Sure, doctor. [Doctor performs examination] Doctor: Your blood"
   }
 
 
