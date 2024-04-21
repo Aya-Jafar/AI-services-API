@@ -7,6 +7,36 @@
 
 Welcome to the Heal Tech.AI Django API repository! This API serves as the backend for the Heal Tech.AI web application, providing various AI-powered medical services. It includes endpoints for next word prediction, summarization, and question answering using pretrained language models.
 
+## Installation
+
+1. Clone this repository:
+
+   ```sh
+   git clone https://github.com/yourusername/yourprojectname.git
+
+2. Navigate to the project directory:
+   ```sh
+   cd collegeDjango
+
+3. python -m venv venv
+4. Activate python environment
+  Window:
+  ```sh
+    source venv/Scripts/activate
+  ```
+  MacOs:
+  ```
+  source venv/bin/activate
+  ```
+5. Install dependencies
+   ```sh
+   pip install -r requirements.txt
+   
+6. Run Server
+   ```sh
+   python manage.py runserver
+
+
 ## Endpoints
 
 ### Next Word Prediction
