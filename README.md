@@ -20,6 +20,7 @@ Welcome to the Heal Tech.AI Django API repository! This API serves as the backen
 
 3. python -m venv venv
 4. Activate python environment
+   
   Window:
   ```sh
     source venv/Scripts/activate
@@ -50,3 +51,58 @@ This endpoint takes a prompt as input and generates the next word prediction bas
   {
       "prompt": "Once upon a time"
   }
+
+- **Response**
+  ```json
+  {
+      "generated_text": "there"
+  }
+
+
+### Summarization 
+
+Takes a long text to summarize
+
+- **Endpoint:** `/generate/summarize/`
+- **HTTP Method:** POST
+- **Example Usage:**
+  ```json
+  {
+      "long_text": "Example Long text"
+  }
+
+- **Response**
+  ```json
+  {
+       "summarized_text": "Appendicitis"
+  }
+
+
+
+### QA model  
+
+Takes a medical question and returns an answer
+
+- **Endpoint:** `/generate/QA/`
+- **HTTP Method:** POST
+- **Example Usage:**
+  ```json
+  {
+      "prompt": "What are the symptoms of appendicitis?"
+  }
+
+- **Response**
+  ```json
+  {
+       "generated_text": "the symptoms of appendicitis can vary depending on the location of the infection, but common symptoms include abdominal pain, nausea, vomiting, and fever."
+  }
+
+
+  
+
+
+
+
+
+
+  
