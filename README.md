@@ -22,7 +22,7 @@ Welcome to the Heal Tech.AI Django API repository! This API serves as the backen
    python -m venv venv
 5. Activate python environment
    
-  Window:
+  Windows:
   ```sh
     source venv/Scripts/activate
   ```
