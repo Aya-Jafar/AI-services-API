@@ -96,13 +96,3 @@ Takes a medical question and returns an answer
   {
        "generated_text": "the symptoms of appendicitis can vary depending on the location of the infection, but common symptoms include abdominal pain, nausea, vomiting, and fever."
   }
-
-
-  
-
-
-
-
-
-
-  
