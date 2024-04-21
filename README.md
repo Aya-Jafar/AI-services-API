@@ -12,7 +12,7 @@ Welcome to the Heal Tech.AI Django API repository! This API serves as the backen
 1. Clone this repository:
 
    ```sh
-   git clone https://github.com/yourusername/yourprojectname.git
+   git clone https://github.com/Aya-Jafar/AI-services-API.git
 
 2. Navigate to the project directory:
    ```sh
