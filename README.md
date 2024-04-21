@@ -18,8 +18,9 @@ Welcome to the Heal Tech.AI Django API repository! This API serves as the backen
    ```sh
    cd collegeDjango
 
-3. python -m venv venv
-4. Activate python environment
+3. ```sh
+   python -m venv venv
+5. Activate python environment
    
   Window:
   ```sh
