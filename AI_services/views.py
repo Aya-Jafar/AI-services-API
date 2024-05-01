@@ -61,6 +61,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(base_model)
 summary_model = PeftModel.from_pretrained(model, config=config, model_id="mohammedRiad/flanT5_summary_withPEFT")
 
 
+
 @csrf_exempt
 def summarize(request):
     if request.method == 'POST':
