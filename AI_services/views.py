@@ -3,6 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForSeq2SeqLM
 import json
 import torch
+from peft import PeftModel, PeftConfig
+from transformers import AutoModelForSeq2SeqLM
 
 
 """
@@ -51,33 +53,40 @@ def predict_next_word(request):
 """
     Summarizarion model
 """
-# mohammedRiad/flanT5_summary_withPEFT
 
-summary_tokenizer = AutoTokenizer.from_pretrained("mohammedRiad/_____")
-summary_model = AutoModelForSeq2SeqLM.from_pretrained("mohammedRiad/_____")
+config = PeftConfig.from_pretrained("mohammedRiad/flanT5_summary_withPEFT")
+base_model = "google/flan-t5-base"
+tokenizer = AutoTokenizer.from_pretrained(base_model)
+model = AutoModelForSeq2SeqLM.from_pretrained(base_model)
+summary_model = PeftModel.from_pretrained(model, config=config, model_id="mohammedRiad/flanT5_summary_withPEFT")
 
 
 @csrf_exempt
 def summarize(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-        prompt = data.get('long_text', '')
-        # Tokenize the long text
-        input_ids = summary_tokenizer.encode(prompt, return_tensors="pt", max_length=1024, truncation=True)
-        attention_mask = torch.ones(input_ids.shape, dtype=torch.long)
+        try:
+            # Extract the input text from the POST request
+            data = json.loads(request.body)
+            input_text = data.get('long_text', '')
 
-        max_length = len(input_ids[0]) // 2
-    
-        # Generate text
-        output = summary_model.generate(input_ids,pad_token_id=summary_tokenizer.pad_token_id,max_length=max_length, attention_mask=attention_mask, num_return_sequences=1, temperature=0.5,do_sample=True)
+            # Tokenize the input text
+            inputs = tokenizer(input_text, return_tensors="pt")
 
-        # Decode the generated output
-        summarized_text = summary_tokenizer.decode(output[0], skip_special_tokens=True)
-        # print(summarized_text)
+            # Generate text using the PEFT model
+            with torch.no_grad():
+                outputs = summary_model.generate(input_ids=inputs["input_ids"], max_length=100)
+                generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-        return JsonResponse({'summarized_text': summarized_text})
+            # Return the generated text as JSON response
+            return JsonResponse({'summarized_text': generated_text})
+
+        except Exception as e:
+            return JsonResponse({'error': str(e)})
+
     else:
         return JsonResponse({'error': 'POST method required'})
+
+
 
 
 
