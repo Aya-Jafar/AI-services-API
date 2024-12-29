@@ -22,6 +22,7 @@ fsspec==2024.3.1
 h11==0.14.0
 httpcore==1.0.4
 httpx==0.27.0
+importlib-metadata==7.1.0
 huggingface-hub==0.22.2
 idna==3.6
 jina-hubble-sdk==0.39.0
