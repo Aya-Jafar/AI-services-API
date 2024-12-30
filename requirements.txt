@@ -7,6 +7,7 @@ Django==4.2.17
 django-cors-headers==4.4.0
 filelock==3.16.1
 fsspec==2024.12.0
+gunicorn==23.0.0
 huggingface-hub==0.27.0
 idna==3.10
 jinja2==3.1.5
