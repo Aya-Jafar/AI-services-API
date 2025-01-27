@@ -1,5 +1,7 @@
 .venv/
 venv/
+myvenv/
+myvenv
 venv/*
 !venv/lib/python3.8/site-packages/numpy/.dylibs/libopenblas64_.0.dylib
 !venv/lib/python3.8/site-packages/torch/lib/libtorch_cpu.dylib
