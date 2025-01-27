@@ -57,7 +57,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3003",
+    "https://heal-tech-ai.netlify.app"
 ]
+
 
 
 ROOT_URLCONF = 'collegeDjango.urls'
