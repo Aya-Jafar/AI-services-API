@@ -1,6 +1,6 @@
 import requests
 
-next_word_url = "http://localhost:8000/generate/next-word/"
+next_word_url = "https://medical-services-api-production.up.railway.app/generate/next-word/"
 summarization_url = "http://localhost:8000/generate/summarize/"
 qa_url = "http://localhost:8000/generate/QA/"
 
