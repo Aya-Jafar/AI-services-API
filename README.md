@@ -99,7 +99,7 @@ Takes a medical question and returns an answer
   }
 
 ## Contributors 
-### Web development:
+### APO development:
 - Aya Jafar
 
 ### AI Services development:
